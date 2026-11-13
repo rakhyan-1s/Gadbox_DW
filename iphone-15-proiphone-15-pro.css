@@ -1,154 +1,143 @@
-/* =========================================
-   1. PENGATURAN DASAR & TIPOGRAFI
-========================================= */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Sangat penting agar padding tidak merusak ukuran elemen */
+    box-sizing: border-box;
 }
 
 body {
     background-color: #ffffff;
-    color: #000000;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* =========================================
-   2. NAVBAR & SEARCH BAR
-========================================= */
-.navbar {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
+/* --- NAVBAR --- */
 .navbar-brand {
     color: #000000 !important;
     font-size: 40px;
-    font-weight: bolder;
+    font-weight: 900; /* Bolder seperti desain asli */
 }
 
-.nav-link {
-    color: #000000 !important;
-    font-weight: 500;
+.search-input {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px; /* Kembali kotak sedikit melengkung */
+    padding: 10px 15px;
+    color: black;
+}
+
+.search-input:focus {
+    border-color: #000000;
+    box-shadow: none;
+}
+
+.nav-link-custom {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
     transition: transform 0.2s ease-in-out;
 }
 
-.nav-link:hover {
+.nav-link-custom:hover {
     transform: scale(1.05);
 }
 
-.form-control {
-    background-color: #f8f9fa; /* Sedikit abu-abu agar beda dari background navbar putih */
-    color: black;
-    border-radius: 20px; /* Sudut melengkung */
+/* --- GAMBAR PRODUK --- */
+.img-main-product {
+    width: 90%;
+    max-width: 600px; /* Membatasi agar tidak pecah di 1920p */
+    object-fit: contain;
+    filter: drop-shadow(0 13px 8px rgba(0, 0, 0, 0.15));
+    transition: transform 0.2s ease-in-out;
 }
 
-/* =========================================
-   3. TEKS DETAIL PRODUK
-========================================= */
-#judul {
-    font-size: clamp(36px, 4vw, 50px); /* Ukuran font dinamis menyesuaikan resolusi */
+.img-main-product:hover {
+    transform: scale(1.03);
+}
+
+.galeri-img {
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 5px rgba(0, 0, 0, 0.15));
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.galeri-img:hover {
+    transform: scale(1.1);
+}
+
+/* --- TEKS & INFO PRODUK --- */
+.card-title-custom {
     color: #000000;
+    font-size: 50px;
+    font-weight: 700;
 }
 
-.text-secondary {
+.card-sku {
+    color: #6c757d; /* Warna abu-abu asli Anda */
     font-size: 16px;
 }
 
-#harga {
-    font-size: clamp(24px, 3vw, 30px);
+.card-price {
     color: #000000;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.card-atau {
+    color: #000000;
+    font-size: 16px;
+}
+
+.card-cicilan {
+    color: #000000;
+    font-size: 18px;
     font-weight: 600;
 }
 
-#cicilan {
-    font-size: 18px;
+.card-label {
     color: #000000;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-/* =========================================
-   4. TOMBOL (MODEL & KAPASITAS)
-========================================= */
+/* --- TOMBOL MODEL & KAPASITAS --- */
 .btn-subtle {
+    padding: 15px 20px;
     background-color: #ffffff;
     border: 1px solid #cccccc;
     color: #000000;
-    font-weight: 500;
-    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 16px;
     border-radius: 8px;
     transition: all 0.2s ease;
     cursor: pointer;
 }
 
-/* Tombol saat dipilih (Active) */
+/* Mengembalikan gaya active persis seperti Screenshot 1 */
 .btn-subtle.active {
-    border: 3px solid #0071e3; /* Biru tebal khas Apple */
+    border: 2px solid #0071e3; /* Biru Apple */
     font-weight: 700;
-    background-color: #f8fbff; /* Sedikit kebiruan di background */
 }
 
 .btn-subtle:focus {
     outline: none;
-    border: 3px solid #0071e3;
 }
 
-/* =========================================
-   5. GAMBAR PRODUK & GALERI
-========================================= */
-/* Gambar Utama */
-.img-main-product {
-    width: 100%;
-    max-height: 60vh; /* Gambar tidak akan terlalu raksasa di layar 1920p */
-    object-fit: contain;
-    filter: drop-shadow(0 13px 8px rgba(0, 0, 0, 0.25)); /* Efek bayangan produk */
-    transition: transform 0.2s ease-in-out;
-}
-
-.img-main-product:hover {
-    transform: scale(1.03); /* Zoom in tipis saat di-hover */
-}
-
-/* Gambar Kecil di Bawah (Galeri) */
-.galeri img {
-    height: 100px; /* Ukuran gambar kecil (thumbnail) */
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 8px 5px rgba(0, 0, 0, 0.15));
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
-}
-
-.galeri img:hover {
-    transform: scale(1.1);
-}
-
-/* =========================================
-   6. HISTORY PENCARIAN (DROPDOWN)
-========================================= */
+/* --- SEARCH HISTORY DROPDOWN --- */
 #searchHistory {
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    margin-top: 8px;
-    padding: 0;
-    overflow: hidden;
     border: 1px solid #ddd;
 }
-
 #searchHistory .list-group-item {
     font-size: 17px;
     padding: 12px 20px;
-    background-color: #ffffff;
     border: none;
     border-bottom: 1px solid #f0f0f0;
     color: #333;
-    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
 }
-
-#searchHistory .list-group-item:last-child {
-    border-bottom: none;
-}
-
 #searchHistory .list-group-item:hover {
     background-color: #f8f9fa;
 }
