@@ -10,34 +10,79 @@
 <body>
     <nav class="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Gadbox</a>
-            <a class="navbar-kategori" href="#">Kategori</a>
-            <form class="hstack" role="search" id="searchForm">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchInput"/>
-                <svg class="bi" width="16" height="16"><use href="#iphone15pro" /></svg>
+            <a class="navbar-brand" href="Home.html">Gadbox</a>
+            <form class="hstack position-relative" role="search" id="searchForm" autocomplete="off">
+                <div class="w-100 position-relative">
+                <input class="form-control w-100" type="search" placeholder="Search" aria-label="Search" id="searchInput"/>
+                <!-- Dropdown untuk History Pencarian -->
+                <ul id="searchHistory" class="list-group position-absolute  shadow-sm" style="display: none; z-index: 1000; top: 100%; left: 0;"></ul>
+                </div>
             </form>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link active" aria-current="page" href="#">Category</a>
-                <a class="nav-link active" aria-current="page" href="#">Cart</a>
-                <a class="nav-link active" aria-current="page" href="#">Wishlist</a>
-                <a class="nav-link active" aria-current="page" href="#">Profile</a>
+            <li class="nav-item" style="display: flex; align-items: center;">
+    <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+    
+    <!-- Wadah Khusus Dropdown Category Utama -->
+    <div class="dropdown-kategori">
+        <a class="nav-link active" aria-current="page" href="#" style="cursor: pointer;">
+            Category ▾
+        </a>
+        
+        <!-- List Menu Dropdown Utama -->
+        <ul class="dropdown-menu-custom">
+            
+            <!-- Kategori 1: Apple (Memiliki Sub-dropdown) -->
+            <li class="sub-dropdown-kategori">
+                <a href="#">iPhone <span style="float: right;">▸</span></a>
+                <!-- Sub-menu Apple -->
+                <ul class="sub-dropdown-menu">
+                    <li><a href="iphone-15-proiphone-15-pro.html">iPhone 15 Pro</a></li>
+                </ul>
             </li>
+
+            <!-- Kategori 2: Samsung (Memiliki Sub-dropdown) -->
+            <li class="sub-dropdown-kategori">
+                <a href="#">Samsung Galaxy <span style="float: right;">▸</span></a>
+                <!-- Sub-menu Samsung -->
+                <ul class="sub-dropdown-menu">
+                    <li><a href="samsung-s26-plusamsung-s26-plus.html">Galaxy S26+</a></li>
+                    <li><a href="samsung-s26-ultrasamsung-s26-ultra.html">Galaxy 26 Ultra</a></li>
+                </ul>
+            </li>
+
+            <!-- Kategori 2: Samsung (Memiliki Sub-dropdown) -->
+            <li class="sub-dropdown-kategori">
+                <a href="#">Poco <span style="float: right;">▸</span></a>
+                <!-- Sub-menu Poco -->
+                <ul class="sub-dropdown-menu">
+                    <li><a href="#">Poco F9 Ultra</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
+        <a class="nav-link active" aria-current="page" href="#">Cart</a>
+        <a class="nav-link active" aria-current="page" href="#">Wishlist</a>
+    </li>
           <li class="nav-item">
         </div>
     </nav>
 
-    <div class="card theme-inverse">
-        <img src="image/aipong18pro.png" class="card-img justify-content-center" alt="...">
-            <div class="card-img-overlay">
-                <h4 class="card-title">Kini tersedia.</h4>
-                <p class="card-text">Mulai dari <strong>Rp 1.145.792 / bln</strong> dan bebas cicilan s.d. <Strong>2 bulan.</Strong></p>
-                <div class="d-flex justify-content-center">Beli Sekarang</div>
-        </div>
+    <div class="card theme-inverse border-0 position-relative">
+    <img src="aipong18pro.png" class="card-img" alt="...">
+    
+    <!-- Wadah khusus untuk Teks (Di Atas) -->
+    <div class="card-text-wrapper">
+        <h4 class="card-title">Kini tersedia.</h4>
+        <p class="card-text">Mulai dari <strong>Rp 1.145.792 / bln</strong> dan bebas cicilan s.d. <strong>2 bulan.</strong></p>
     </div>
+
+    <div class="card-btn-wrapper">
+        <!-- Ubah <div> menjadi <a> dan masukkan link tujuan di dalam href -->
+        <a href="iphone-15-proiphone-15-pro.html" class="btn-beli">Beli Sekarang</a>
+    </div>
+</div>
     <h2 class="container-text">Berbagai Merk Gadget</h2>
     <div class="menu-container">
-        <!-- Menu 1: Voucher -->
         <div class="menu-item">
             <a href="samsung-all-produksamsung-all-produk.html"><i class="fa-solid fa-ticket icon-mach"></i></a>
             <span class="menu-label">Samsung</span>
@@ -55,77 +100,124 @@
 
         <div class="menu-item">
             <i class="fa-solid fa-burger icon-music"></i>
-            <span class="menu-label">Music</span>
+            <span class="menu-label">Poco</span>
         </div>
 
         <div class="menu-item">
             <i class="fa-solid fa-certificate icon-ipad"></i>
-            <span class="menu-label">Oppo</span>
+            <span class="menu-label">Xiaomi</span>
         </div>
 
         <div class="menu-item">
             <i class="fa-solid fa-burger icon-music"></i>
-            <span class="menu-label">Music</span>
+            <span class="menu-label">Vivo</span>
         </div>
     </div>
     <h2 class="kategori-title">Produk Populer</h2>
         <div class="kategori-container">
             <div class="kategori-grid">
-                <a class="kategori-item">
-                    <img src="image/iphone15pro_white_titanium_HD_tanpa_background.png" alt="iPhone 15 Pro">
+                <!-- Baris 1 -->
+                <a href="iphone-15-proiphone-15-pro.html" class="kategori-item">
+                    <img src="iphone15pro_white_titanium_HD_tanpa_background.png" alt="iPhone 15 Pro">
                     <span >iPhone 15 Pro</span>
                     <p class="span-p">Mulai Rp 21 juta</p>
                 </a>
-                <a class="kategori-item">
-                    <img src="image/samsung_galaxy_s26_biru_HD_tanpa_background.png" alt="Samsung S26+">
+                <a href="samsung-s26-plusamsung-s26-plus.html" class="kategori-item">
+                    <img src="samsung_galaxy_s26_biru_HD_tanpa_background.png" alt="Samsung S26+">
                     <span>Samsung S26+</span>
                     <p class="span-p">Mulai Rp 12 juta</p>
                 </a>
-                <a class="kategori-item">
-                    <img src="image/samsung_s26_ultra_hitam_spen_HD_tanpa_background.png" alt="iPhone 16 Pro">
+                <a href="samsung-s26-ultrasamsung-s26-ultra.html" class="kategori-item">
+                    <img src="samsung_s26_ultra_hitam_spen_HD_tanpa_background.png" alt="iPhone 16 Pro">
                     <span>Samsung S26 Ultra</span>
                     <p class="span-p">Mulai Rp 25.5 juta</p>
                 </a>
-                <a class="kategori-item">
-                    <img src="image/aipong16pm-removebg-preview (1).png" alt="iPhone 16 Pro Max">
-                    <span>iPhone 16 Pro Max</span>
-                    <p class="span-p">Mulai Rp 20.6 juta</p>
+                <a href="" class="kategori-item">
+                    <img src="Render Smartphone POCO Merah Muda.png" alt="iPhone 16 Pro Max">
+                    <span>Poco F9 Ultra</span>
+                    <p class="span-p">Mulai Rp14 Juta</p>
                 </a>
-                <a class="kategori-item">
-                    <img src="image/aipong17pro-removebg-preview.png" alt="iPhone 17 Pro">
-                    <span>iPhone 17 Pro</span>
-                    <p class="span-p">Mulai Rp 22.5 juta</p>
+                <!-- Baris 2 -->
+                <a href="" class="kategori-item">
+                    <img src="Ponsel Vivo dengan Kamera Zeiss.png" alt="iPhone 17 Pro">
+                    <span>Vivo X300 Ultra</span>
+                    <p class="span-p">Mulai Rp26 Juta</p>
                 </a>
-                <a class="kategori-item">
-                    <img class="img-kategori" src="image/aipong17pm-removebg-preview.png" alt="iPhone 17 Pro Max">
-                    <span>iPhone 17 Pro Max</span>
-                    <p class="span-p">Mulai Rp 25.5 juta</p>
+                <a href="" class="kategori-item">
+                    <img class="img-kategori" src="Render Smartphone OPPO Berkilau.png" alt="iPhone 17 Pro Max">
+                    <span>Oppo A7 Pro Max 5G</span>
+                    <p class="span-p">Mulai Rp 10 juta</p>
                 </a>
-                <a class="kategori-item">
-                    <img class="img-kategori" src="image/aipong18pro-removebg-preview.png" alt="iPhone 18 Pro">
+                <a href="" class="kategori-item">
+                    <img class="img-kategori" src="aipong18pro-removebg-preview.png" alt="iPhone 18 Pro">
                     <span>iPhone 18 Pro</span>
                     <p class="span-p">Mulai Rp 27.5 juta</p>
                 </a>
-                <a class="kategori-item">
-                    <img src="image/aipong18pmburgun-removebg-preview.png" alt="iPhone 18 Pro Max">
+                <a href="" class="kategori-item">
+                    <img src="aipong18pmburgun-removebg-preview.png" alt="iPhone 18 Pro Max">
                     <span>iPhone 18 Pro Max</span>
                     <p class="span-p">Mulai Rp 29.5 juta</p>
                 </a>
             </div>
         </div>
-        <script>
-    document.getElementById('searchForm').addEventListener('submit', function(event) {
-        event.preventDefault(); 
         
-        let query = document.getElementById('searchInput').value.trim();
-        if (query !== "") {
-            let formattedQuery = query.toLowerCase().replace(/\s+/g, '-');
-            
-            window.location.href = "/" + formattedQuery + "iphone-15-proiphone-15-pro.html";
-            window.location.href = "/" + formattedQuery + "samsung-26-plussamsung-s26-plus.html";
-            window.location.href = "/" + formattedQuery + "samsung-26-ultrasamsung-s26-ultra.html";
+<script>
+    // 1. Daftar URL Tujuan
+    const routes = {
+        "iphone 15 pro": "iphone-15-proiphone-15-pro.html",
+        "samsung s26+": "samsung-s26-plusamsung-s26-plus.html",
+        "samsung s26 ultra": "samsung-s26-ultrasamsung-s26-ultra.html"
+    };
+
+    const form = document.getElementById('searchForm');
+    const input = document.getElementById('searchInput');
+    const historyBox = document.getElementById('searchHistory');
+
+    // 2. Fungsi Utama: Pencarian & Simpan History
+    window.doSearch = (query) => {
+        query = query.trim().toLowerCase();
+        if (!query) return;
+
+        // Ambil, saring duplikat, tambah baru di depan, batasi 5 item, lalu simpan
+        let history = JSON.parse(localStorage.getItem('history')) || [];
+        history = [query, ...history.filter(k => k !== query)].slice(0, 5);
+        localStorage.setItem('history', JSON.stringify(history));
+
+        // Pindah halaman jika ada di daftar 'routes'
+        if (routes[query]) window.location.href = routes[query];
+        else alert(`Produk "${query}" tidak ditemukan.`);
+    };
+
+    // 3. Tampilkan History (saat input di-klik)
+    input.onfocus = () => {
+        let history = JSON.parse(localStorage.getItem('history')) || [];
+        if (history.length) {
+            historyBox.style.display = 'block';
+            historyBox.innerHTML = history.map(k => 
+                `<li class="list-group-item list-group-item-action" style="cursor:pointer" onclick="doSearch('${k}')">🕒 ${k}</li>`
+            ).join('');
         }
-    });
+    };
+
+    // 4. Jalankan Pencarian saat tombol Enter/Cari ditekan
+    form.onsubmit = (e) => { 
+        e.preventDefault(); 
+        doSearch(input.value); 
+    };
+
+    // 5. Sembunyikan History saat mulai mengetik atau klik di luar form
+    input.oninput = () => historyBox.style.display = 'none';
+    document.onclick = (e) => { 
+        if (!form.contains(e.target)) historyBox.style.display = 'none'; 
+    };
+
+    // 6. Cek Status Login Pelanggan
+    const savedUser = JSON.parse(localStorage.getItem('gadbox_customer') || sessionStorage.getItem('gadbox_customer') || 'null');
+    const navAuth = document.getElementById('navAuth');
+    if (savedUser && navAuth) {
+        navAuth.textContent = `👤 ${savedUser.name || 'Profil'}`;
+        navAuth.title = `Login sebagai ${savedUser.email}`;
+    }
 </script>
 </body>
 </html>
