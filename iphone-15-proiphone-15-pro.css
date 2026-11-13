@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* --- NAVBAR --- */
+.navbar-brand {
+    color: #000000 !important;
+    font-size: 40px;
+    font-weight: 900; /* Bolder seperti desain asli */
+}
+
+.search-input {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px; /* Kembali kotak sedikit melengkung */
+    padding: 10px 15px;
+    color: black;
+}
+
+.search-input:focus {
+    border-color: #000000;
+    box-shadow: none;
+}
+
+.nav-link-custom {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.nav-link-custom:hover {
+    transform: scale(1.05);
+}
+
+/* --- GAMBAR PRODUK --- */
+.img-main-product {
+    width: 90%;
+    max-width: 600px; /* Membatasi agar tidak pecah di 1920p */
+    object-fit: contain;
+    filter: drop-shadow(0 13px 8px rgba(0, 0, 0, 0.15));
+    transition: transform 0.2s ease-in-out;
+}
+
+.img-main-product:hover {
+    transform: scale(1.03);
+}
+
+.galeri {
+    height: 26%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 5px rgba(0, 0, 0, 0.15));
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.galeri-img:hover {
+    transform: scale(1.1);
+}
+
+/* --- TEKS & INFO PRODUK --- */
+.card-title-custom {
+    color: #000000;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.card-sku {
+    color: #6c757d; /* Warna abu-abu asli Anda */
+    font-size: 16px;
+}
+
+.card-price {
+    color: #000000;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.card-atau {
+    color: #000000;
+    font-size: 16px;
+}
+
+.card-cicilan {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-label {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* --- TOMBOL MODEL & KAPASITAS --- */
+.btn-subtle {
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/* Mengembalikan gaya active persis seperti Screenshot 1 */
+.btn-subtle.active {
+    border: 2px solid #0071e3; /* Biru Apple */
+    font-weight: 700;
+}
+
+.btn-subtle:focus {
+    outline: none;
+}
+
+/* --- SEARCH HISTORY DROPDOWN --- */
+#searchHistory {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+#searchHistory .list-group-item {
+    font-size: 17px;
+    padding: 12px 20px;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+    cursor: pointer;
+}
+#searchHistory .list-group-item:hover {
+    background-color: #f8f9fa;
+}
