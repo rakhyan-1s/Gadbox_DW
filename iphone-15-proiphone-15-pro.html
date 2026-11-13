@@ -4,63 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gadbox - Home</title>
+    <!-- Update Bootstrap ke versi stabil (opsional, tapi disarankan) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="iphone-15-proiphone-15-pro.css">
+    
+    <style>
+        /* Tambahan sedikit CSS untuk merapikan gambar dan tombol */
+        .img-main-product {
+            width: 100%;
+            max-height: 70vh; /* Agar gambar tidak raksasa di layar 1920p */
+            object-fit: contain;
+        }
+        .galeri img {
+            width: 80px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+        }
+        .btn-subtle {
+            border: 1px solid #ccc;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        .btn-subtle.active {
+            border: 2px solid #007bff; /* Warna biru aktif */
+            background-color: #f8fbff;
+        }
+    </style>
 </head>
-<body class="bg-white">
+<body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-white border-bottom py-3">
-        <!-- container-fluid px-5 agar melebar rapi di 1920p seperti aslinya -->
-        <div class="container-fluid px-md-5 d-flex align-items-center justify-content-between">
+    <!-- BAGIAN NAVBAR -->
+    <!-- container-xl membatasi lebar maksimal layar 1920p agar tetap di tengah -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
+        <div class="container-xl d-flex align-items-center justify-content-between">
             
-            <div class="d-flex align-items-center">
-                <a class="navbar-brand" href="#">Gadbox</a>
-                <a class="nav-link d-none d-md-block ms-4" href="#" style="font-size: 20px;">Kategori</a>
+            <div class="d-flex align-items-center gap-4">
+                <a class="navbar-brand fw-bold fs-3 mb-0" href="#">Gadbox</a>
+                <a class="nav-link d-none d-md-block" href="#">Kategori</a>
             </div>
 
-            <!-- Search Bar kembali kotak dengan sudut sedikit melengkung -->
-            <form class="flex-grow-1 mx-5 position-relative" role="search" id="searchForm" autocomplete="off" style="max-width: 800px;">
-                <input class="form-control w-100 search-input" type="search" placeholder="Search" aria-label="Search" id="searchInput"/>
-                <ul id="searchHistory" class="list-group position-absolute w-100 shadow-sm mt-1" style="display: none; z-index: 1000; top: 100%; left: 0; border-radius: 8px; overflow: hidden;"></ul>
+            <!-- Search Bar dibuat memanjang (flex-grow) tapi dibatasi maksimal 600px -->
+            <form class="flex-grow-1 mx-4 position-relative" role="search" id="searchForm" autocomplete="off" style="max-width: 600px;">
+                <input class="form-control w-100 rounded-pill px-4" type="search" placeholder="Search" aria-label="Search" id="searchInput"/>
+                <ul id="searchHistory" class="list-group position-absolute w-100 shadow-sm mt-1" style="display: none; z-index: 1000; top: 100%; left: 0; border-radius: 12px; overflow: hidden;"></ul>
             </form>
 
-            <ul class="navbar-nav d-flex flex-row gap-4">
-                <li class="nav-item"><a class="nav-link-custom active" href="Home.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link-custom" href="#">Category</a></li>
-                <li class="nav-item"><a class="nav-link-custom" href="#">Cart</a></li>
-                <li class="nav-item"><a class="nav-link-custom" href="#">Wishlist</a></li>
+            <ul class="navbar-nav d-flex flex-row gap-3">
+                <li class="nav-item"><a class="nav-link active" href="Home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Category</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Wishlist</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- KONTEN UTAMA -->
-    <main class="container-fluid px-md-5 mt-5">
+    <!-- BAGIAN KONTEN UTAMA -->
+    <main class="container-xl mt-5">
+        <!-- row membagi layar menjadi 12 kolom. col-md-6 artinya 50:50 -->
         <div class="row gx-5">
             
             <!-- AREA KIRI: GAMBAR -->
-            <div class="col-md-6 text-center">
-                <img id="gambar-produk" src="image/iphone15pro_white_titanium_HD_tanpa_background.png" class="img-main-product" alt="iPhone 15 Pro">
+            <div class="col-md-6 text-center mb-4">
+                <img id="gambar-produk" src="image/iphone15pro_white_titanium_HD_tanpa_background.png" class="img-main-product mb-4" alt="iPhone 15 Pro">
                 
-                <div class="galeri d-flex justify-content-center gap-4 mt-4">
-                    <img id="gambar-depan" src="image/iphone15pro_depan_HD_tanpa_background.png" alt="Tampak depan" class="galeri-img">
-                    <img id="gambar-belakang" src="image/iphone15pro_belakang.png" alt="Tampak belakang" class="galeri-img">
+                <div class="galeri d-flex justify-content-center gap-3">
+                    <img id="gambar-depan" src="image/iphone15pro_depan_HD_tanpa_background.png" alt="Tampak depan">
+                    <img id="gambar-belakang" src="image/iphone15pro_belakang.png" alt="Tampak belakang">
                 </div>
             </div>
 
             <!-- AREA KANAN: DETAIL PRODUK -->
-            <div class="col-md-5 pt-3">
-                <h1 class="card-title-custom" id="judul">iPhone 15 Pro</h1>
-                <p class="card-sku mb-5">SKU: 8100122795</p>
+            <div class="col-md-6">
+                <h1 class="fw-bold" id="judul">iPhone 15 Pro</h1>
+                <p class="text-secondary mb-4">SKU: 8100122795</p>
                 
-                <h2 class="card-price" id="harga">Rp 21.000.000</h2>
-                <p class="card-atau mb-1">atau</p>
-                <p class="card-cicilan mb-5" id="cicilan">Rp 875.000/bln. untuk 24 bln.*</p>
+                <h2 class="fw-bold" id="harga">Rp 21.000.000</h2>
+                <p class="text-muted mb-0"><small>atau</small></p>
+                <p class="fw-semibold mb-5" id="cicilan">Rp 875.000/bln. untuk 24 bln.*</p>
 
-                <!-- Model -->
+                <!-- Pilihan Model -->
                 <div class="mb-4">
-                    <p class="card-label">Model</p>
-                    <div class="d-flex flex-column gap-3">
+                    <p class="fw-bold mb-2">Model</p>
+                    <div class="d-flex flex-column gap-2">
                         <button type="button" class="btn-subtle btn-model active text-start" data-group="model"
                                 data-model="pro" data-nama="iPhone 15 Pro"
                                 data-img="image/iphone15pro_white_titanium_HD_tanpa_background.png"
@@ -75,24 +104,121 @@
                     </div>
                 </div>
 
-                <!-- Kapasitas -->
+                <!-- Pilihan Kapasitas -->
                 <div>
-                    <p class="card-label">Kapasitas</p>
-                    <div class="d-flex flex-wrap gap-3">
+                    <p class="fw-bold mb-2">Kapasitas</p>
+                    <div class="d-flex flex-wrap gap-2">
                         <button type="button" class="btn-subtle btn-kapasitas active flex-grow-1" data-group="kapasitas" id="btn-128" data-kapasitas="128">128 GB</button>
                         <button type="button" class="btn-subtle btn-kapasitas flex-grow-1" data-group="kapasitas" data-kapasitas="256">256 GB</button>
                         <button type="button" class="btn-subtle btn-kapasitas flex-grow-1" data-group="kapasitas" data-kapasitas="512">512 GB</button>
                         <button type="button" class="btn-subtle btn-kapasitas flex-grow-1" data-group="kapasitas" data-kapasitas="1024">1 TB</button>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </main>
 
-    <!-- Letakkan script JS Anda tepat di sini, sama persis seperti sebelumnya -->
+    <!-- SCRIPT JS DARI KODE ANDA SEBELUMNYA (Tidak ada fungsi yang dirubah, hanya dirapikan indentasinya) -->
     <script>
-        // (Masukkan script JavaScript asli Anda di sini, tidak ada yang perlu diubah)
+        const harga = {
+            pro:    { 128: 21000000, 256: 23500000, 512: 28500000, 1024: 33500000 },
+            promax: { 256: 25000000, 512: 30000000, 1024: 35000000 }
+        };
+
+        let modelDipilih = 'pro';
+        let kapasitasDipilih = 128;
+
+        function rupiah(angka) {
+            return 'Rp ' + angka.toLocaleString('id-ID');
+        }
+
+        function updateHarga() {
+            const total = harga[modelDipilih][kapasitasDipilih];
+            document.getElementById('harga').textContent = rupiah(total);
+            document.getElementById('cicilan').textContent = rupiah(Math.round(total / 24)) + '/bln. untuk 24 bln.*';
+        }
+
+        function tandai(tombol) {
+            document.querySelectorAll('.btn-subtle[data-group="' + tombol.dataset.group + '"]')
+                .forEach(function (t) { t.classList.remove('active'); });
+            tombol.classList.add('active');
+        }
+
+        const routes = {
+            "iphone 15 pro": "iphone-15-proiphone-15-pro.html",
+            "samsung s26+": "samsung-s26-plusamsung-s26-plus.html",
+            "samsung s26 ultra": "samsung-s26-ultrasamsung-s26-ultra.html"
+        };
+
+        const form = document.getElementById('searchForm');
+        const input = document.getElementById('searchInput');
+        const historyBox = document.getElementById('searchHistory');
+
+        window.doSearch = (query) => {
+            query = query.trim().toLowerCase();
+            if (!query) return;
+
+            let history = JSON.parse(localStorage.getItem('history')) || [];
+            history = [query, ...history.filter(k => k !== query)].slice(0, 5);
+            localStorage.setItem('history', JSON.stringify(history));
+
+            if (routes[query]) window.location.href = routes[query];
+            else alert(`Produk "${query}" tidak ditemukan.`);
+        };
+
+        input.onfocus = () => {
+            let history = JSON.parse(localStorage.getItem('history')) || [];
+            if (history.length) {
+                historyBox.style.display = 'block';
+                historyBox.innerHTML = history.map(k => 
+                    `<li class="list-group-item list-group-item-action" style="cursor:pointer" onclick="doSearch('${k}')">🕒 ${k}</li>`
+                ).join('');
+            }
+        };
+
+        form.onsubmit = (e) => { 
+            e.preventDefault(); 
+            doSearch(input.value); 
+        };
+
+        input.oninput = () => historyBox.style.display = 'none';
+        document.onclick = (e) => { 
+            if (!form.contains(e.target)) historyBox.style.display = 'none'; 
+        };
+
+        document.querySelectorAll('.btn-model').forEach(function (tombol) {
+            tombol.addEventListener('click', function () {
+                document.getElementById('gambar-produk').src = tombol.dataset.img;
+                document.getElementById('gambar-depan').src = tombol.dataset.depan;
+                document.getElementById('gambar-belakang').src = tombol.dataset.belakang;
+                document.getElementById('judul').textContent = tombol.dataset.nama;
+
+                modelDipilih = tombol.dataset.model;
+                const tombol128 = document.getElementById('btn-128');
+
+                if (modelDipilih === 'promax') {
+                    tombol128.style.display = 'none';
+                    if (kapasitasDipilih === 128) {
+                        kapasitasDipilih = 256;
+                        tandai(document.querySelector('.btn-kapasitas[data-kapasitas="256"]'));
+                    }
+                } else {
+                    tombol128.style.display = '';
+                }
+
+                updateHarga();
+                tandai(tombol);
+            });
+        });
+
+        document.querySelectorAll('.btn-kapasitas').forEach(function (tombol) {
+            tombol.addEventListener('click', function () {
+                kapasitasDipilih = Number(tombol.dataset.kapasitas);
+                updateHarga();
+                tandai(tombol);
+            });
+        });
     </script>
 </body>
 </html>
