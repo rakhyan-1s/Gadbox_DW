@@ -42,7 +42,7 @@ body {
 
 /* --- GAMBAR PRODUK --- */
 .img-main-product {
-    width: 90%;
+    width: 70%;
     max-width: 600px; /* Membatasi agar tidak pecah di 1920p */
     object-fit: contain;
     filter: drop-shadow(0 13px 8px rgba(0, 0, 0, 0.15));
@@ -53,12 +53,34 @@ body {
     transform: scale(1.03);
 }
 
+/* --- WADAH GALERI --- */
 .galeri {
-    height: 26%;
+    display: flex;               /* Menggunakan flexbox agar elemen di dalamnya berjejer rapi */
+    justify-content: center;     /* Memposisikan kedua gambar di tengah */
+    align-items: flex-end;       /* KUNCI: Memastikan bagian bawah (kaki) kedua gambar sejajar rata */
+    gap: 40px;                   /* Mengganti margin-left/right manual, memberikan jarak yang stabil antar gambar */
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* --- GAMBAR GALERI (DEPAN & BELAKANG DIBUAT SAMA) --- */
+.gambar-depan, 
+.gambar-belakang {
+    height: 10vh;                /* KUNCI: Menggunakan tinggi layar (vh) agar KEDUA gambar ukurannya sama persis dan responsif */
+    min-height: 250px;           /* Batas terkecil agar tidak hilang di layar kecil */
+    max-height: 500px;           /* Batas terbesar agar tidak raksasa */
+    width: auto;                 /* Lebar akan otomatis mengikuti tinggi tanpa mengubah proporsi/gepeng */
     object-fit: contain;
+    margin: auto;
     filter: drop-shadow(0 8px 5px rgba(0, 0, 0, 0.15));
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
+}
+
+/* --- EFEK HOVER (ZOOM) --- */
+.gambar-depan:hover, 
+.gambar-belakang:hover {
+    transform: scale(1.05);      /* Gambar membesar sedikit saat disentuh kursor */
 }
 
 .galeri-img:hover {
