@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <title>Gadbox - Home</title>
+    <link rel="stylesheet" href="iphone-15-proiphone-15-pro.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Gadbox</a>
+            <a class="navbar-kategori" href="#">Kategori</a>
+            <form class="hstack position-relative" role="search" id="searchForm" autocomplete="off">
+                <div class="w-100 position-relative">
+                <input class="form-control w-100" type="search" placeholder="Search" aria-label="Search" id="searchInput"/>
+                <!-- Dropdown untuk History Pencarian -->
+                <ul id="searchHistory" class="list-group position-absolute w-100 shadow-sm" style="display: none; z-index: 1000; top: 100%; left: 0;"></ul>
+                </div>
+            </form>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">Category</a>
+                <a class="nav-link active" aria-current="page" href="#">Cart</a>
+                <a class="nav-link active" aria-current="page" href="#">Wishlist</a>
+            </li>
+          <li class="nav-item">
+        </div>
+    </nav>
+    <div class="card" style="max-width: 540px;">
+    <img id="gambar-produk" src="iphone15pro_white_titanium_HD_tanpa_background.png" class="card-img-start" alt="iPhone 15 Pro">
+    <div class="galeri">
+        <img id="gambar-depan" src="iphone15pro_depan_HD_tanpa_background.png" alt="Tampak depan" class="card-image1">
+        <img id="gambar-belakang" src="iphone15pro_belakang.png" alt="Tampak belakang" class="card-image2">
+    </div>
+    <div class="card-body">
+        <h4 class="card-title" id="judul">iPhone 15 Pro</h4>
+            <p class="card-sku">SKU: 8100122795</p>
+            <p class="card-price" id="harga">Rp 21.000.000</p>
+            <p class="card-atau"><small>atau</small></p>
+            <p class="card-cicilan" id="cicilan">Rp 875.000/bln. untuk 24 bln.*</p>
+
+        <p class="card-model">Model</p>
+        <button type="button" class="btn-subtle btn-model active" data-group="model"
+                data-model="pro" data-nama="iPhone 15 Pro"
+                data-img="iphone15pro_white_titanium_HD_tanpa_background.png"
+                data-depan="iphone15pro_depan_HD_tanpa_background.png"
+                data-belakang="iphone15pro_belakang.png">iPhone 15 Pro</button>
+        <button type="button" class="btn-subtle btn-model" data-group="model"
+                data-model="promax" data-nama="iPhone 15 Pro Max"
+                data-img="iphone15promax_HD_tanpa_background.png"
+                data-depan="iphone15promax_natural_depan_HD_tanpa_background.png"
+                data-belakang="iphone15promax_natural_belakang_HD_tanpa_background.png">iPhone 15 Pro Max</button>
+
+        <p class="card-kapasitas">Kapasitas</p>
+        <button type="button" class="btn-subtle btn-kapasitas active" data-group="kapasitas" id="btn-128" data-kapasitas="128">128 GB</button>
+        <button type="button" class="btn-subtle btn-kapasitas" data-group="kapasitas" data-kapasitas="256">256 GB</button>
+        <button type="button" class="btn-subtle btn-kapasitas" data-group="kapasitas" data-kapasitas="512">512 GB</button>
+        <button type="button" class="btn-subtle btn-kapasitas" data-group="kapasitas" data-kapasitas="1024">1 TB</button>
+    </div>
+</div>
+
+<script>
+    // Tabel harga: harga[model][kapasitas]
+    // Angka di bawah hanya contoh, ganti dengan harga aslimu
+    const harga = {
+        pro:    { 128: 21000000, 256: 23500000, 512: 28500000, 1024: 33500000 },
+        promax: { 256: 25000000, 512: 30000000, 1024: 35000000 }
+    };
+
+    let modelDipilih = 'pro';
+    let kapasitasDipilih = 128;
+
+    // Format angka jadi 21.000.000
+    function rupiah(angka) {
+        return 'Rp ' + angka.toLocaleString('id-ID');
+    }
+
+    // Perbarui harga dan cicilan di halaman
+    function updateHarga() {
+        const total = harga[modelDipilih][kapasitasDipilih];
+        document.getElementById('harga').textContent = rupiah(total);
+        document.getElementById('cicilan').textContent =
+            rupiah(Math.round(total / 24)) + '/bln. untuk 24 bln.*';
+    }
+
+    // Beri tanda biru pada tombol yang dipilih (per kelompok)
+    function tandai(tombol) {
+        document.querySelectorAll('.btn-subtle[data-group="' + tombol.dataset.group + '"]')
+            .forEach(function (t) { t.classList.remove('active'); });
+        tombol.classList.add('active');
+    }
+
+    // 1. Daftar URL Tujuan
+    const routes = {
+        "iphone 15 pro": "iphone-15-proiphone-15-pro.html",
+        "samsung s26+": "samsung-s26-plusamsung-s26-plus.html",
+        "samsung s26 ultra": "samsung-s26-ultrasamsung-s26-ultra.html"
+    };
+
+    const form = document.getElementById('searchForm');
+    const input = document.getElementById('searchInput');
+    const historyBox = document.getElementById('searchHistory');
+
+    // 2. Fungsi Utama: Pencarian & Simpan History
+    window.doSearch = (query) => {
+        query = query.trim().toLowerCase();
+        if (!query) return;
+
+        // Ambil, saring duplikat, tambah baru di depan, batasi 5 item, lalu simpan
+        let history = JSON.parse(localStorage.getItem('history')) || [];
+        history = [query, ...history.filter(k => k !== query)].slice(0, 5);
+        localStorage.setItem('history', JSON.stringify(history));
+
+        // Pindah halaman jika ada di daftar 'routes'
+        if (routes[query]) window.location.href = routes[query];
+        else alert(`Produk "${query}" tidak ditemukan.`);
+    };
+
+    // 3. Tampilkan History (saat input di-klik)
+    input.onfocus = () => {
+        let history = JSON.parse(localStorage.getItem('history')) || [];
+        if (history.length) {
+            historyBox.style.display = 'block';
+            historyBox.innerHTML = history.map(k => 
+                `<li class="list-group-item list-group-item-action" style="cursor:pointer" onclick="doSearch('${k}')">🕒 ${k}</li>`
+            ).join('');
+        }
+    };
+
+    // 4. Jalankan Pencarian saat tombol Enter/Cari ditekan
+    form.onsubmit = (e) => { 
+        e.preventDefault(); 
+        doSearch(input.value); 
+    };
+
+    // 5. Sembunyikan History saat mulai mengetik atau klik di luar form
+    input.oninput = () => historyBox.style.display = 'none';
+    document.onclick = (e) => { 
+        if (!form.contains(e.target)) historyBox.style.display = 'none'; 
+    };
+
+    // Klik tombol MODEL: ganti gambar, judul, dan harga
+    // Klik tombol MODEL: ganti gambar, judul, harga, dan atur tombol 128 GB
+    document.querySelectorAll('.btn-model').forEach(function (tombol) {
+        tombol.addEventListener('click', function () {
+            document.getElementById('gambar-produk').src = tombol.dataset.img;
+            document.getElementById('gambar-depan').src = tombol.dataset.depan;
+            document.getElementById('gambar-belakang').src = tombol.dataset.belakang;
+            document.getElementById('judul').textContent = tombol.dataset.nama;
+
+            modelDipilih = tombol.dataset.model;
+
+            const tombol128 = document.getElementById('btn-128');
+
+            if (modelDipilih === 'promax') {
+                tombol128.style.display = 'none';        // sembunyikan 128 GB
+
+                // kalau 128 GB sedang terpilih, pindah ke 256 GB
+                if (kapasitasDipilih === 128) {
+                    kapasitasDipilih = 256;
+                    tandai(document.querySelector('.btn-kapasitas[data-kapasitas="256"]'));
+                }
+            } else {
+                tombol128.style.display = '';            // tampilkan lagi 128 GB
+            }
+
+            updateHarga();
+            tandai(tombol);
+        });
+    });
+
+    // Klik tombol KAPASITAS: ganti harga dan cicilan
+    document.querySelectorAll('.btn-kapasitas').forEach(function (tombol) {
+        tombol.addEventListener('click', function () {
+            kapasitasDipilih = Number(tombol.dataset.kapasitas);
+            updateHarga();
+            tandai(tombol);
+        });
+    });
+
+    // Cek Status Login Pelanggan
+    const savedUser = JSON.parse(localStorage.getItem('gadbox_customer') || sessionStorage.getItem('gadbox_customer') || 'null');
+    const navAuth = document.getElementById('navAuth');
+    if (savedUser && navAuth) {
+        navAuth.textContent = `👤 ${savedUser.name || 'Profil'}`;
+        navAuth.title = `Login sebagai ${savedUser.email}`;
+    }
+</script>
+</body>
+</html>

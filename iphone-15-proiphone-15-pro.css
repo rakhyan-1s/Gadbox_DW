@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body {
+    background-color: white;
+    justify-content: center;
+}
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.navbar-brand {
+    color: black;
+    margin: 20px;
+    font-size: 40px;
+    font-weight: bolder;
+}
+.navbar-kategori {
+    color: black;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.nav-item {
+    color: black;
+}
+.hstack {
+    margin-top: 32.5px;
+}
+.form-control {
+    background-color: white;
+    margin-left: 0.5%;
+    padding: 8px;
+    width: 94%;
+    color: black;
+    border-radius: 5px;
+    margin-top: -2.5px;
+}
+.nav-link {
+    text-align: center;
+    margin: 15px;
+    
+}
+.nav-link:hover {
+    transform: scale(1.02);
+    transition: 0.2s ease-in-out;
+}
+.card-title{
+    color: black;
+    margin-top: -52%;
+    text-align: left;
+    font-size: 50px;
+}
+.card-price {
+    color: #000000;
+    text-align: left;
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: 500;
+}
+.card-atau {
+    color: #000000;
+    font-weight: 500;
+    font-size: 17px;
+    margin-top: -0.7%;
+}
+.card-sku {
+    color: #000000;
+    font-size: 16px;
+}
+.card-cicilan {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -0.7%;
+}
+.card-cicilan-paylater {
+    font-weight: bold;
+     margin-top: -0.7%;
+     color: rgb(0, 132, 255);
+}
+.card-cicilan-paylater:hover {
+    transform: scale(1.002);
+    transition: 0.2s ease-in-out;
+}
+.card-warna {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 3%;
+}
+.card-model {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 9%;
+}
+.btn-subtle {
+    padding: 10px;
+    width: 50%;
+    background-color: #ffffff;
+    border-color: #000000;
+    color: #000000;
+    font-weight: 500;
+    margin-top: 0.7%;
+    transition: border-color 0.2s ease;
+}
+.btn-subtle.active {
+    border: 3px solid #0071e3;   /* border biru tebal */
+    font-weight: 700;            /* teks ikut tebal */
+}
+.btn-subtle:focus {
+    border: 3px solid #0071e3;
+    outline: none;
+}
+.card-kapasitas {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 3.5%;
+}
+.card{
+    margin-left: 10.5%;
+    margin: auto;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin-top: 5%;
+    margin-right: 50.5%;
+    display: flex;
+}
+.card-body {
+    width: 150%;
+    margin: auto;
+    margin-left: 150%;
+    margin-top: -125%;
+    text-align: left;
+}
+.card-img-start {
+    width: 95%;
+    aspect-ratio: 406 / 500;
+    background: transparent;
+    object-fit: contain;
+    filter: drop-shadow(0 13px 8px rgba(0, 0, 0, 0.25));
+}
+.card-img-start:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+}
+.galeri {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 15%;
+    padding: 0 20px;
+}
+
+.galeri img {
+    height: 350px;
+    width: auto;
+}
+.card-image1 {
+    margin: auto;
+    margin-left: -40%;
+    filter: drop-shadow(0 13px 8px rgba(0, 0, 0, 0.25));
+    background: transparent;
+    padding-bottom: 15%;
+}
+.card-image1:hover {
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
+}
+.card-image2:hover {
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
+}
+.card-image2 {
+    margin: auto;
+    margin-left: 80%;
+    filter: drop-shadow(0 13px 8px rgba(0, 0, 0, 0.25));
+    background: transparent;
+    padding-bottom: 15%;
+}
+
+/* --- TAMPILAN WADAH HISTORY PENCARIAN --- */
+        #searchHistory {
+            background-color: #ffffff; /* Background putih */
+            width: 95%; /* Lebar sama dengan form search */
+            border-radius: 8px; /* Sudut agak membulat biar rapi */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Bayangan agar terlihat melayang */
+            margin-top: 8px; /* Jarak sedikit dari kotak pencarian */
+            padding: 0;
+            overflow: hidden; /* Menjaga sudut melengkung */
+            border: 1px solid #ddd;
+        }
+
+        /* --- TAMPILAN ITEM HISTORY PENCARIAN (LIST) --- */
+        #searchHistory .list-group-item {
+            font-size: 1.1rem; /* Font agak diperbesar (sekitar 17px-18px) */
+            padding: 12px 20px; /* Padding diperlebar (atas-bawah 12px, kiri-kanan 20px) */
+            background-color: #ffffff;
+            border: none; /* Menghilangkan border bawaan bootstrap */
+            border-bottom: 1px solid #f0f0f0; /* Garis pemisah tipis antar item */
+            color: #333;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        /* Menghilangkan garis pemisah di item paling bawah */
+        #searchHistory .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Efek saat kursor diarahkan ke history (Hover) */
+        #searchHistory .list-group-item:hover {
+            background-color: #f8f9fa; /* Warna abu-abu sangat muda saat di-hover */
+        }
+        
