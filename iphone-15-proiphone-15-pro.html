@@ -7,33 +7,6 @@
     <!-- Update Bootstrap ke versi stabil (opsional, tapi disarankan) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="iphone-15-proiphone-15-pro.css">
-    
-    <style>
-        /* Tambahan sedikit CSS untuk merapikan gambar dan tombol */
-        .img-main-product {
-            width: 100%;
-            max-height: 70vh; /* Agar gambar tidak raksasa di layar 1920p */
-            object-fit: contain;
-        }
-        .galeri img {
-            width: 80px;
-            cursor: pointer;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 5px;
-        }
-        .btn-subtle {
-            border: 1px solid #ccc;
-            background-color: white;
-            padding: 10px;
-            border-radius: 8px;
-            font-weight: 500;
-        }
-        .btn-subtle.active {
-            border: 2px solid #007bff; /* Warna biru aktif */
-            background-color: #f8fbff;
-        }
-    </style>
 </head>
 <body>
 
@@ -72,7 +45,7 @@
                 <img id="gambar-produk" src="image/iphone15pro_white_titanium_HD_tanpa_background.png" class="img-main-product mb-4" alt="iPhone 15 Pro">
                 
                 <div class="galeri d-flex justify-content-center gap-3">
-                    <img id="gambar-depan" src="image/iphone15pro_depan_HD_tanpa_background.png" alt="Tampak depan">
+                    <img id="gambar-depan" class="gambar-depan" src="image/iphone15pro_depan_HD_tanpa_background.png" alt="Tampak depan">
                     <img id="gambar-belakang" src="image/iphone15pro_belakang.png" alt="Tampak belakang">
                 </div>
             </div>
