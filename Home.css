@@ -117,46 +117,53 @@ body {
     margin: auto;
 }
 .menu-container {
-            background-color: #ffffff;
-            display: flex;
-            gap: 15px; /* Jarak antar menu */
-            padding: 20px 40px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            margin-top: 4%;
-        }
+    background-color: #ffffff;
+    display: flex;
+    gap: 25px;
+    padding: 20px 40px;
+    margin-top: 4%;
+}
 
-        .menu-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            cursor: pointer;
-            text-align: center;
-            background: linear-gradient(to right, rgb(26, 26, 26), rgb(0, 0, 0));
-            padding: 1%;
-            margin: auto;
-            margin-top: -3%;
-            border-radius: 10px;
-        }
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+    text-align: center;
+    background: linear-gradient(to right, rgb(26, 26, 26), rgb(0, 0, 0));
+    padding: 30px;
+    margin: auto;
+    border-radius: 10px;
+    width: 50%;
+    transition: 0.2s ease-in-out;
+}
 
-        .menu-item i {
-            font-size: 36px;
-        }
+.menu-item img {
+    width: 120px;
+    height: 100px;
+    object-fit: contain;
+}
 
-        /* Gaya untuk teks label di bawah ikon */
-        .menu-label {
-            font-size: 15px;
-            font-weight: 800; /* Teks tebal */
-            color: #ffffff;
-        }
+.menu-label {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+}
 
-        /* Efek saat menu disorot (hover) */
-        .menu-item:hover {
-            transform: scale(1.01);
-            transition: 0.2s ease-in-out;
-            background-color: #000000;
-        }
+.menu-item:hover {
+    transform: scale(1.02);
+    background: #000000;
+}
+.menu-item {
+    text-decoration: none;
+    color: white;
+}
 
+.menu-item img {
+    display: block;
+}
         .kategori-title {
             margin: 43px;
             font-size: 30px;
