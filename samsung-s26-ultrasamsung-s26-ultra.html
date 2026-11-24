@@ -6,7 +6,7 @@
     <title>Gadbox - Home</title>
     <!-- Update Bootstrap ke versi stabil (opsional, tapi disarankan) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="iphone-15-proiphone-15-pro.css">
+    <link rel="stylesheet" href="samsung-s26-ultrasamsung-s26-ultra.css">
     
 </head>
 <body>
@@ -46,29 +46,29 @@
                 <img id="gambar-produk" src="image/samsung_s26_ultra_hitam_spen_HD_tanpa_background.png" class="img-main-product mb-4" alt="Samsung S26 Ultra">
                 
                 <div class="galeri d-flex justify-content-center gap-3">
-                    <img id="gambar-depan" class="gambar-depan" src="image/samsung_s26_hitam_depan_HD_tanpa_background.png" alt="Tampak depan">
-                    <img id="gambar-belakang" src="image/samsung_ultra_hitam_belakang_HD_tanpa_background.png" alt="Tampak belakang">
+                    <img class="gambar-depan" id="gambar-depan" class="gambar-depan" src="image/samsung_s26_hitam_depan_HD_tanpa_background.png" alt="Tampak depan">
+                    <img class="gambar-belakang" id="gambar-belakang" src="image/samsung_ultra_hitam_belakang_HD_tanpa_background.png" alt="Tampak belakang">
                 </div>
             </div>
 
             <!-- AREA KANAN: DETAIL PRODUK -->
             <div class="col-md-6">
                 <h1 class="fw-bold" id="judul">Samsung S26 Ultra</h1>
-                <p class="text-secondary mb-4">SKU: 8100122795</p>
+                <p class="text-secondary mb-4">SKU: SM-S948B</p>
                 
-                <h2 class="fw-bold" id="harga">Rp 21.000.000</h2>
+                <h2 class="fw-bold" id="harga">Rp 25.499.000</h2>
                 <p class="text-muted mb-0"><small>atau</small></p>
-                <p class="fw-semibold mb-5" id="cicilan">Rp 875.000/bln. untuk 24 bln.*</p>
+                <p class="fw-semibold mb-5" id="cicilan">Rp 1.062.458/bln. untuk 24 bln.*</p>
 
                 <!-- Pilihan Model -->
                 <div class="mb-4">
                     <p class="fw-bold mb-2">Model</p>
                     <div class="d-flex flex-column gap-2">
                         <button type="button" class="btn-subtle btn-model active text-start" data-group="model"
-                                data-model="pro" data-nama="Samsung S26 Ultra"
+                                data-model="samsungs26ultra" data-nama="Samsung S26 Ultra"
                                 data-img="image/samsung_s26_ultra_hitam_spen_HD_tanpa_background.png"
-                                data-depan="image/samsung_s26_ultra_hitam_depan_HD_tanpa_background.png"
-                                data-belakang="image/samsung_s26_ultra_hitam_belakang_HD_tanpa_background.png">Samsung S26 Ultra</button>
+                                data-depan="image/samsung_s26_hitam_depan_HD_tanpa_background.png"
+                                data-belakang="image/samsung_ultra_hitam_belakang_HD_tanpa_background.png">Samsung S26 Ultra</button>
                     </div>
                 </div>
 
@@ -76,7 +76,7 @@
                 <div>
                     <p class="fw-bold mb-2">Kapasitas</p>
                     <div class="d-flex flex-wrap gap-2">
-                        <button type="button" class="btn-subtle btn-kapasitas active flex-grow-1" data-group="kapasitas" id="btn-128" data-kapasitas="256">256 GB</button>
+                        <button type="button" class="btn-subtle btn-kapasitas active flex-grow-1" data-group="kapasitas" id="btn-256" data-kapasitas="256">256 GB</button>
                         <button type="button" class="btn-subtle btn-kapasitas flex-grow-1" data-group="kapasitas" data-kapasitas="512">512 GB</button>
                     </div>
                 </div>
@@ -88,10 +88,10 @@
     <!-- SCRIPT JS DARI KODE ANDA SEBELUMNYA (Tidak ada fungsi yang dirubah, hanya dirapikan indentasinya) -->
     <script>
         const harga = {
-            ultra:    { 256: 23500000, 512: 28500000},
+            samsungs26ultra: { 256: 25499000, 512: 29499000 }
         };
 
-        let modelDipilih = 'ultra';
+        let modelDipilih = 'samsungs26ultra';
         let kapasitasDipilih = 256;
 
         function rupiah(angka) {
@@ -162,10 +162,10 @@
                 modelDipilih = tombol.dataset.model;
                 const tombol128 = document.getElementById('btn-128');
 
-                if (modelDipilih === 'promax') {
+                if (modelDipilih === 'samsungs26ultra') {
                     tombol128.style.display = 'none';
-                    if (kapasitasDipilih === 128) {
-                        kapasitasDipilih = 256;
+                    if (kapasitasDipilih === 256) {
+                        kapasitasDipilih = 512;
                         tandai(document.querySelector('.btn-kapasitas[data-kapasitas="256"]'));
                     }
                 } else {

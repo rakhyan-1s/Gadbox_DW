@@ -54,11 +54,30 @@ body {
 }
 
 .galeri {
-    height: 26%;
+    height: 10%;
     object-fit: contain;
     filter: drop-shadow(0 8px 5px rgba(0, 0, 0, 0.15));
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
+    margin-top: 10%;
+}
+
+.gambar-depan {
+    margin-right: 8%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.gambar-depan:hover {
+    transform: scale(1.03);
+}
+
+.gambar-belakang {
+    margin-left: 17%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.gambar-belakang:hover {
+    transform: scale(1.03);
 }
 
 .galeri-img:hover {
